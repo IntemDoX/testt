@@ -1,0 +1,37 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorSurface">@color/colorSurface</item>
+		<item name="colorAccent">@color/colorAccent</item>
+        <item name="floatingActionButtonStyle">@style/FABStyle</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorSurface</item>
+        <item name="android:windowBackground">@color/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="FABStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/colorAccent</item>
+        <item name="tint">@color/colorIconPrimary </item>
+    </style>
+
+    <style name="BigTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/default_text_size_xxxl</item>
+    </style>
+
+    <style name="SecondaryTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item_bg">
+        <color android:color="@color/colorSurface" />
+    </item>
+    <item
+        android:id="@+id/marker"
+        android:width="@dimen/category_marker_width">
+        <shape android:shape="rectangle">
+            <size
+                android:width="@dimen/category_marker_width"
+                android:height="@dimen/item_list_height" />
+            <corners
+                android:bottomLeftRadius="@dimen/item_list_radius"
+                android:topLeftRadius="@dimen/item_list_radius" />
+        </shape>
+    </item>
+</layer-list>

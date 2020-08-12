@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Template</string>
+
+    <!--    region menu-->
+    <string name="menu_filter">filter</string>
+
+    <!--    endregion-->
+
+    <string name="snack_item_removed">Item was removed from the list.</string>
+    <string name="snack_undo">UNDO</string>
+
+</resources>

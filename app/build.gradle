@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+def lib = rootProject.ext.libraries
+
+def version = "1.0.0"
+
+def maxMajor = 1
+def maxMinor = 99
+def maxPatch = 99
+
+def major = (version.substring(0, version.indexOf("."))).toInteger()
+def minor = (version.substring(version.indexOf(".") + 1, version.lastIndexOf("."))).toInteger()
+def patch = (version.substring(version.lastIndexOf(".") + 1, version.length())).toInteger()
+
+//for now limits are: 1.99.99. When we will be sure that version should be updated to 2+ - change maximum values
+
+if (major > maxMajor) throw new GradleException("Major version ${major} exceeds limit")
+if (minor > maxMinor) throw new GradleException("Minor version ${minor} exceeds limit")
+if (patch > maxPatch) throw new GradleException("Patch version ${patch} exceeds limit")
+
+def code = (major * 10000000) + (minor * 100000) + (patch * 1000)
+
+android {
+
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.llaerto.keepmymoney"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode code
+        versionName version
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //AndroidX
+    implementation "androidx.appcompat:appcompat:$lib.appcompat"
+    implementation "androidx.recyclerview:recyclerview:$lib.recycler"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$lib.swipeRefresh"
+    implementation "androidx.core:core-ktx:$lib.coreKtx"
+    implementation "androidx.constraintlayout:constraintlayout:$lib.constraintlayout"
+    implementation "androidx.cardview:cardview:$lib.cardView"
+    implementation "androidx.security:security-crypto:$lib.security"
+    implementation "androidx.fragment:fragment:$lib.fragments"
+
+    //aac
+    implementation "androidx.lifecycle:lifecycle-extensions:$lib.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime:$lib.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lib.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lib.lifecycle"
+    implementation "androidx.navigation:navigation-fragment-ktx:$lib.navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$lib.navigation"
+
+    //material
+    implementation "com.google.android.material:material:$lib.material"
+
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$lib.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$lib.coroutines"
+
+    //koin
+    implementation "org.koin:koin-android:$lib.koin"
+    implementation "org.koin:koin-androidx-viewmodel:$lib.koin"
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$lib.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$lib.retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$lib.coroutinesAdapter"
+    implementation "com.squareup.okhttp3:logging-interceptor:$lib.okHttp"
+
+    //testing
+    testImplementation "androidx.test:core-ktx:$lib.testCore"
+    testImplementation "android.arch.core:core-testing:$lib.archTesting"
+    testImplementation "org.junit.jupiter:junit-jupiter:$lib.junit"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$lib.mockito"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$lib.coroutinesTesting"
+}

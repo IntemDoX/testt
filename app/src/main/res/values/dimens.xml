@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //Generic margins
+    <dimen name="default_margin_none">0dp</dimen>
+    <dimen name="default_margin_xxxs">2dp</dimen>
+    <dimen name="default_margin_xxs">4dp</dimen>
+    <dimen name="default_margin_xs">8dp</dimen>
+    <dimen name="default_margin_s">12dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_margin_l">24dp</dimen>
+    <dimen name="default_margin_xl">32dp</dimen>
+    <dimen name="default_margin_xxl">36dp</dimen>
+    <dimen name="default_margin_xxxl">48dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+
+    //text sizes generic
+    <dimen name="default_text_size_s">12sp</dimen>
+    <dimen name="default_text_size">14sp</dimen>
+    <dimen name="default_text_size_l">16sp</dimen>
+    <dimen name="default_text_size_xl">18sp</dimen>
+    <dimen name="default_text_size_xxl">20sp</dimen>
+    <dimen name="default_text_size_xxxl">24sp</dimen>
+
+    <!--    region home-->
+    <dimen name="item_list_height">88dp</dimen>
+    <dimen name="item_list_radius">4dp</dimen>
+    <dimen name="category_marker_width">16dp</dimen>
+    <dimen name="item_list_card_elevation">4dp</dimen>
+    <dimen name="list_margin_bottom">96dp</dimen>
+
+    <!--    endregion-->
+</resources>

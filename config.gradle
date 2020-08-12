@@ -1,0 +1,59 @@
+ext {
+    libraries = [
+            //AndroidX
+            appcompat        : '1.3.0-alpha01',
+            recycler         : '1.2.0-alpha03',
+            coreKtx          : '1.5.0-alpha01',
+            constraintlayout : '1.1.3',
+            cardView         : '1.0.0',
+            swipeRefresh     : '1.1.0-rc01',
+            security         : '1.1.0-alpha01',
+            fragments        : '1.2.5',
+
+            //AAC
+            lifecycle        : '2.2.0',
+            navigation       : '2.2.2',
+
+            //Google
+            material         : '1.3.0-alpha01',
+            maps             : '16.1.0',
+
+            //Koin
+            koin             : '2.0.0-rc-2',
+
+            //Kotlin
+            coroutines       : '1.3.4',
+
+            //Network
+            retrofit         : '2.7.2',
+            coroutinesAdapter: '0.9.2',
+            okHttp           : '3.14.1',
+
+            //QR code
+            codeScanner      : '2.1.0',
+
+            //Kotlin Permissions
+            permissions      : '2.0.1',
+
+            //Glide
+            glide            : '4.11.0',
+
+            //CalendarView
+            calendarView     : '2.0.0',
+
+            //Firebase
+            firebase         : '17.4.3',
+            crashlytics      : '2.10.1',
+            cloudMassaging   : '20.2.0',
+
+            //testing
+            junit            : '5.6.0',
+            mockito          : '2.2.0',
+            archTesting      : '1.1.1',
+            coroutinesTesting: '1.3.3',
+            robolectric      : '4.3',
+            testCore         : '1.2.0',
+            threetenbp       : '1.3.6'
+    ]
+}
+
